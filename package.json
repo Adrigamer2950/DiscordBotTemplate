@@ -23,7 +23,7 @@
   },
   "bun-create": {
     "preinstall": "echo 'Installing...'",
-    "postinstall": ["bunx prisma generate", "bunx prisma db push"],
+    "postinstall": ["prisma generate"],
     "start": "bun dev"
   }
 }
