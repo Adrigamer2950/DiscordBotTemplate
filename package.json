@@ -3,7 +3,8 @@
   "module": "src/index.ts",
   "type": "module",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "prisma": "^5.14.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -16,8 +17,13 @@
     "fs": "^0.0.1-security"
   },
   "scripts": {
-    "start": "NODE_ENV=dev bun .",
     "dev": "NODE_ENV=dev bun .",
-    "prod": "bun ."
+    "prod": "bun .",
+    "start": "bun ."
+  },
+  "bun-create": {
+    "preinstall": "echo 'Installing...'",
+    "postinstall": ["bunx prisma generate", "bunx prisma db push"],
+    "start": "bun dev"
   }
 }
