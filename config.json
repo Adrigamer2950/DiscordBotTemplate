@@ -1,0 +1,16 @@
+{
+    "dev": {
+        "presence": {
+            "status": "dnd",
+            "type": 4,
+            "desc": "Currently in Dev Build"
+        }
+    },
+    "prod": {
+        "presence": {
+            "status": "dnd",
+            "type": 3,
+            "desc": "v0.0.1"
+        }
+    }
+}
