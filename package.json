@@ -1,0 +1,28 @@
+{
+  "name": "discord-bot-template",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "^1.1.10"
+  },
+  "peerDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@nyx-discord/core": "^2.3.0",
+    "@types/node": "^22.7.4",
+    "@types/readline-sync": "^1.4.8",
+    "discord-api-types": "^0.37.101",
+    "dotenv": "^16.4.5",
+    "fs": "^0.0.1-security",
+    "readline-sync": "^1.4.10"
+  },
+  "scripts": {
+    "dev": "while true; do bun .; done",
+    "start": "bun ."
+  },
+  "bun-create": {
+    "preinstall": "printf '\\x1b[33mInstalling...\\n'",
+    "start": "bun start"
+  }
+}

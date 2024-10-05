@@ -1,0 +1,16 @@
+{
+  "dev": {
+    "presence": {
+      "status": "dnd",
+      "type": 4,
+      "desc": "Dev Environment"
+    }
+  },
+  "prod": {
+    "presence": {
+      "status": "dnd",
+      "type": 3,
+      "desc": "Production Environment"
+    }
+  }
+}
