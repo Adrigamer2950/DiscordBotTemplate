@@ -22,7 +22,7 @@
     "start": "bun ."
   },
   "bun-create": {
-    "preinstall": "printf '\\x1b[33mInstalling...\\n'",
+    "preinstall": "bash -c \"printf '\\x1b[33mInstalling...\\n'\"",
     "start": "bun start"
   }
 }
