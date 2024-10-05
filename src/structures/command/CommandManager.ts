@@ -90,6 +90,10 @@ export class CustomCommandManager implements CommandManager {
     constructor(bot: NyxBot) {
         this.bot = bot;
     }
+    
+    setCommands(...commands: TopLevelCommand[]): Awaitable<this> {
+        throw new Error("Method not implemented.");
+    }
 
     async onSetup(): Promise<void> {
         this.bot.getLogger().info("&eLoading commands...");
@@ -112,9 +116,9 @@ export class CustomCommandManager implements CommandManager {
     onStart(): Awaitable<void> {
         let slash: RESTPostAPIChatInputApplicationCommandsJSONBody[] = [];
 
-        this.commands.forEach((cmd, id) => slash.push(cmd.getData() as RESTPostAPIChatInputApplicationCommandsJSONBody));
+        this.commands.forEach((cmd) => slash.push(cmd.getData() as RESTPostAPIChatInputApplicationCommandsJSONBody));
 
-        this.bot.getClient().rest.put(Routes.applicationGuildCommands("950879533706387467", "980934253879644270"), {
+        this.bot.getClient().rest.put(Routes.applicationCommands(this.bot.getClient().user?.id as string), {
             body: slash
         })
     }
