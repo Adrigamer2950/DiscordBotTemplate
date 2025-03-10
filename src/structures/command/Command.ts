@@ -27,9 +27,13 @@ export abstract class AbstractCommand implements StandaloneCommand {
         return this.getData().name;
     }
 
-    abstract isParent(): this is ParentCommand;
+    isParent(): this is ParentCommand {
+        throw new Error("Method not implemented.");
+    }
 
-    abstract isContextMenu(): this is ContextMenuCommand;
+    isContextMenu(): this is ContextMenuCommand {
+        throw new Error("Method not implemented.");
+    }
 
     isStandalone(): this is StandaloneCommand {
         return true;

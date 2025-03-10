@@ -15,12 +15,4 @@ export default class Command extends AbstractCommand {
             ephemeral: true
         })
     }
-
-    isParent(): this is ParentCommand {
-        throw new Error("Method not implemented.");
-    }
-
-    isContextMenu(): this is ContextMenuCommand {
-        throw new Error("Method not implemented.");
-    }
 }
